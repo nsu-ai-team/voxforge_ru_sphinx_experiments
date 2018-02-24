@@ -1,0 +1,11 @@
+*.html
+bwaccumdir/
+falignout/
+feat/
+logdir/
+model_architecture/
+model_parameters/
+qmanager/
+result/
+trees/
+
