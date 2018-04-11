@@ -1,4 +1,5 @@
 import re
+import pickle
 
 with open('../sphinx_train.cfg') as f:
 	to_change = re.findall('(?:\$CFG_BASE_DIR|\$CFG_SPHINXTRAIN_DIR|\$CFG_BIN_DIR|\$CFG_SCRIPT_DIR) = ([^\n]+)', f.read())
@@ -48,16 +49,20 @@ for line in lines:
 with open('voxforge_ru_test.fileids', 'w') as ids_test_file:
 	ids_test_file.write(ids_test)
 	
-with open('../PROMPTS_all_dict') as f:
-	all_dic = dict(list([(line.split()[0], ' '.join(line.split()[1:])) for line in f.readlines()]))
+with open('../PROMPTS_all_dict.pkl', 'rb') as f:
+	all_dic = pickle.load(f)
 
 phoneset = set()
 
 with open('voxforge_ru.dic', 'w') as f:
 	for word in sorted(list(vocab_train)):
 		if word not in ['<s>','</s>','<sil>', '<um>', '<h>', '<l>']:
-			f.writelines('{} {}\n'.format(word, all_dic[word]))
-			phoneset = phoneset | set(all_dic[word].split())
+			for i, variant in enumerate(all_dic[word]):
+				if i == 0:
+					f.writelines('{} {}\n'.format(word, variant))
+				else:
+					f.writelines('{}({}) {}\n'.format(word, i, variant))
+				phoneset = phoneset | set(variant.split())
 
 with open('voxforge_ru.phone', 'w') as f:
 	f.write('\n'.join(['SIL'] + sorted(list(phoneset))))
