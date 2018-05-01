@@ -28,3 +28,4 @@ etc/7/sphinx_train.cfg
 etc/8/sphinx_train.cfg
 etc/9/sphinx_train.cfg
 etc/sphinx_train.cfg
+etc/PROMPTS_all_dict.pkl
