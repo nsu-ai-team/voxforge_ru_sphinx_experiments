@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 for i in {2..10}
 do

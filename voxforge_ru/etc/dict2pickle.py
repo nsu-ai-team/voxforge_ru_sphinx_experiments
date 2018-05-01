@@ -1,4 +1,4 @@
-with open('PROMPTS_all_dict') as f:
+with open('PROMPTS_all_dict', 'r') as f:
 	all_dic = {}
 	for line in f.readlines():
 		word = line.split()[0]

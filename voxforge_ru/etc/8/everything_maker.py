@@ -1,10 +1,10 @@
 import re
 import pickle
 
-with open('../sphinx_train.cfg') as f:
+with open('../sphinx_train.cfg', 'r') as f:
 	to_change = re.findall('(?:\$CFG_BASE_DIR|\$CFG_SPHINXTRAIN_DIR|\$CFG_BIN_DIR|\$CFG_SCRIPT_DIR) = ([^\n]+)', f.read())
 
-with open('sphinx_train.cfg') as f:
+with open('sphinx_train.cfg', 'r') as f:
 	new_cfg = f.read()
 	to_change_old = re.findall('(?:\$CFG_BASE_DIR|\$CFG_SPHINXTRAIN_DIR|\$CFG_BIN_DIR|\$CFG_SCRIPT_DIR) = ([^\n]+)', new_cfg)
 	for i, path in enumerate(to_change):
@@ -36,7 +36,7 @@ with open('voxforge_ru_train.fileids', 'w') as ids_train_file:
 
 vocab_train = set('\n'.join(sorted(list(set(corpus_train)))).split())
 
-with open('voxforge_ru_test.transcription') as file_test:
+with open('voxforge_ru_test.transcription', 'r') as file_test:
 	lines = file_test.readlines()
 
 ids_test = ''
