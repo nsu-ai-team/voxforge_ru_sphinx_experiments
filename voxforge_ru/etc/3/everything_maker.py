@@ -1,19 +1,8 @@
 import re
 import pickle
 
-with open('../sphinx_train.cfg', 'r') as f:
-	to_change = re.findall('(?:\$CFG_BASE_DIR|\$CFG_SPHINXTRAIN_DIR|\$CFG_BIN_DIR|\$CFG_SCRIPT_DIR) = ([^\n]+)', f.read())
 
-with open('sphinx_train.cfg', 'r') as f:
-	new_cfg = f.read()
-	to_change_old = re.findall('(?:\$CFG_BASE_DIR|\$CFG_SPHINXTRAIN_DIR|\$CFG_BIN_DIR|\$CFG_SCRIPT_DIR) = ([^\n]+)', new_cfg)
-	for i, path in enumerate(to_change):
-		new_cfg = re.sub(to_change_old[i], path, new_cfg)
-
-with open('sphinx_train.cfg', 'w') as f:
-	f.write(new_cfg)
-
-with open('voxforge_ru_train.transcription') as file_train:
+with open('voxforge_ru_train.transcription', 'r') as file_train:
 	lines = file_train.readlines()
 	words = set(re.findall('(?<=\s)[^()\s]+(?=\s)', ' ' + file_train.read()))
 
