@@ -39,6 +39,9 @@ find etc -type f -name "*.count" -delete
 find etc -type f -name "*.lm" -delete
 find etc -type f -name "*.lm.bin" -delete
 find etc -type f -name "corpus_train" -delete
-if [ -f etc/*.transcription ]; then
-	rm etc/*.transcription
+if [ -f etc/voxforge_ru_test.transcription ]; then
+	rm etc/voxforge_ru_test.transcription
+fi
+if [ -f etc/voxforge_ru_train.transcription ]; then
+        rm etc/voxforge_ru_train.transcription
 fi
