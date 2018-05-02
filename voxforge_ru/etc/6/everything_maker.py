@@ -45,13 +45,9 @@ phoneset = set()
 
 with open('voxforge_ru.dic', 'w') as f:
 	for word in sorted(list(vocab_train)):
-		if word not in ['<s>','</s>','<sil>', '<um>', '<h>', '<l>']:
-			for i, variant in enumerate(all_dic[word]):
-				if i == 0:
-					f.writelines('{} {}\n'.format(word, variant))
-				else:
-					f.writelines('{}({}) {}\n'.format(word, i, variant))
-				phoneset = phoneset | set(variant.split())
+		if word not in ['<s>','</s>','<sil>', '<um>', '<h>', '<l>', '\'']:
+			f.writelines('{} {}\n'.format(word, word))
+			phoneset.add(word)
 
 with open('voxforge_ru.phone', 'w') as f:
 	f.write('\n'.join(['SIL'] + sorted(list(phoneset))))
