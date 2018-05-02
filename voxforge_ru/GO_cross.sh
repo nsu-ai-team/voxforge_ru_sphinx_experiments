@@ -17,5 +17,5 @@ do
         cp -a "etc/$i/voxforge_ru_test.transcription" etc/voxforge_ru_test.transcription
         cp -a "etc/$i/voxforge_ru_train.transcription" etc/voxforge_ru_train.transcription
 	sphinxtrain run
-	tail -3 result/voxforge_ru.align >> result_all_3gramm/results
+	cat result/voxforge_ru.align >> result_all_3gramm/results
 done
