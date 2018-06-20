@@ -27,18 +27,9 @@ fi
 if [ -f voxforge_ru.html ]; then
 	rm voxforge_ru.html
 fi
-if [ -f etc/PROMPTS_all_dict.pkl ]; then
-	rm etc/PROMPTS_all_dict.pkl
-fi
 
-find etc -type f -name "*.dic" -delete
+find etc -type f -name "feat.params" -delete
 find etc -type f -name "*.cfg" -delete
-find etc -type f -name "*.fileids" -delete
-find etc -type f -name "*.phone" -delete
-find etc -type f -name "*.count" -delete
-find etc -type f -name "*.lm" -delete
-find etc -type f -name "*.lm.bin" -delete
-find etc -type f -name "corpus_train" -delete
-if [ -f etc/*.transcription ]; then
-	rm etc/*.transcription
-fi
+find etc -maxdepth 1 -type f -name "*.fileids" -delete
+find etc -maxdepth 1 -type f -name "*.transcription" -delete
+
