@@ -20,6 +20,15 @@ fi
 if [ -d trees/ ]; then
 	rm -r trees
 fi
+if [ -d falignout/ ]; then
+        rm -r falignout
+fi
+if [ -d numlat/ ]; then
+        rm -r numlat
+fi
+if [ -d denlat/ ]; then
+        rm -r denlat
+fi
 if [ -d logdir/ ]; then
         rm -r logdir
 fi
@@ -32,4 +41,5 @@ find etc -type f -name "feat.params" -delete
 find etc -type f -name "*.cfg" -delete
 find etc -maxdepth 1 -type f -name "*.fileids" -delete
 find etc -maxdepth 1 -type f -name "*.transcription" -delete
+find etc -maxdepth 1 -type f -name "*.lm" -delete
 

@@ -6,10 +6,14 @@ qmanager/*
 result/*
 result_all_3gramm/*
 trees/*
+falignout/*
+numlat/*
+denlat/*
 voxforge_ru.html
 etc/feat.params
 etc/sphinx_train.cfg
 etc/voxforge_ru.lm
 etc/*.fileids
 etc/*.transcription
+etc/*.lm
 .idea/*
