@@ -13,13 +13,13 @@ perl -i -p -e "s/CFG_NUM_FILT = 25/CFG_NUM_FILT = 15/" sphinx_train.cfg
 perl -i -p -e "s/CFG_LO_FILT = 130/CFG_LO_FILT = 200/" sphinx_train.cfg
 perl -i -p -e "s/CFG_HI_FILT = 6800/CFG_HI_FILT = 3500/" sphinx_train.cfg
 perl -i -p -e "s/CFG_N_TIED_STATES = 200/CFG_N_TIED_STATES = 3000/" sphinx_train.cfg
-perl -i -p -e "s/.lm.DMP/.lm/" sphinx_train.cfg
 perl -i -p -e "s/CFG_MMIE = \"no\"/CFG_MMIE = \"yes\"/" sphinx_train.cfg
 perl -i -p -e "s/CFG_CMN = 'batch'/CFG_CMN = 'current'/" sphinx_train.cfg
 perl -i -p -e "s/CFG_MMIE_TYPE   = \"rand\"/CFG_MMIE_TYPE   = \"best\"/" sphinx_train.cfg
 perl -i -p -e "s/CFG_MMIE_CONSTE = \"3.0\"/CFG_MMIE_CONSTE = \"3.5\"/" sphinx_train.cfg
 perl -i -p -e "s/CFG_FORCEDALIGN = 'no'/CFG_FORCEDALIGN = 'yes'/" sphinx_train.cfg
 cd ..
+./prepare_config_file.py -s etc/sphinx_train.cfg -d etc/sphinx_train.cfg
 
 if [ -d result_all_3gramm/ ]; then
 	rm -r result_all_3gramm
