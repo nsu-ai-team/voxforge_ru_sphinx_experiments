@@ -15,7 +15,6 @@ perl -i -p -e "s/CFG_HI_FILT = 6800/CFG_HI_FILT = 3500/" sphinx_train.cfg
 perl -i -p -e "s/CFG_N_TIED_STATES = 200/CFG_N_TIED_STATES = 3000/" sphinx_train.cfg
 perl -i -p -e "s/CFG_MMIE = \"no\"/CFG_MMIE = \"yes\"/" sphinx_train.cfg
 perl -i -p -e "s/CFG_CMN = 'batch'/CFG_CMN = 'current'/" sphinx_train.cfg
-perl -i -p -e "s/CFG_MMIE_TYPE   = \"rand\"/CFG_MMIE_TYPE   = \"best\"/" sphinx_train.cfg
 perl -i -p -e "s/CFG_MMIE_CONSTE = \"3.0\"/CFG_MMIE_CONSTE = \"3.5\"/" sphinx_train.cfg
 perl -i -p -e "s/CFG_FORCEDALIGN = 'no'/CFG_FORCEDALIGN = 'yes'/" sphinx_train.cfg
 cd ..
