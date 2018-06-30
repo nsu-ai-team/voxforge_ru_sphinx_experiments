@@ -23,6 +23,9 @@ fi
 if [ -d logdir/ ]; then
         rm -r logdir
 fi
+if [ -d falignout/ ]; then
+        rm -r falignout
+fi
 
 if [ -f voxforge_ru.html ]; then
 	rm voxforge_ru.html

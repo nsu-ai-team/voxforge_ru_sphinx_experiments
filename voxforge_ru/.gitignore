@@ -6,6 +6,7 @@ qmanager/*
 result/*
 result_all_3gramm/*
 trees/*
+falignout/*
 voxforge_ru.html
 etc/feat.params
 etc/sphinx_train.cfg
