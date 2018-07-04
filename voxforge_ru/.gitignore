@@ -23,4 +23,4 @@ etc/*/corpus_train
 etc/*.fileids
 etc/*.transcription
 etc/voxforge_ru.dic
-
+.idea/
